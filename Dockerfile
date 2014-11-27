@@ -4,9 +4,9 @@ MAINTAINER Joshua Lee <muzili@gmail.com>
 
 
 #Update the sources.list from china
-RUN echo "deb http://mirrors.aliyun.com/ubuntu trusty main universe restricted" > /etc/apt/sources.list
-RUN echo "deb http://mirrors.aliyun.com/ubuntu trusty-updates main universe restricted" >> /etc/apt/sources.list
-RUN echo "deb http://mirrors.aliyun.com/ubuntu trusty-security main universe restricted" >> /etc/apt/sources.list
+RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe restricted" > /etc/apt/sources.list
+RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-updates main universe restricted" >> /etc/apt/sources.list
+RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-security main universe restricted" >> /etc/apt/sources.list
 
 #
 # fundamental packages
