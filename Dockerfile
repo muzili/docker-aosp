@@ -37,7 +37,7 @@ RUN useradd --create-home -d $HOME --shell /bin/bash --user-group \
 
 ADD gitconfig /home/$MYNAME/.gitconfig
 ADD ssh_config /home/$MYNAME/.ssh/config
-RUN chown $MYNAME:$MYNAME -R /home/aosp
+RUN chown $MYNAME:$MYNAME -R /home/$MYNAME
 
 USER $MYNAME
 WORKDIR /aosp
