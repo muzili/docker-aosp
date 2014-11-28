@@ -1,0 +1,3 @@
+# Somewhat insecure, fork and override as needed.
+Host *
+     StrictHostKeyChecking no

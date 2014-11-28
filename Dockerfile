@@ -25,11 +25,16 @@ RUN chmod 755 /usr/local/bin/repo
 # considered to be ephemeral
 VOLUME ["/ccache", "/aosp"]
 
+# All builds will be done by user aosp
+ADD gitconfig /home/aosp/.gitconfig
+ADD ssh_config /home/aosp/.ssh/config
+RUN useradd --create-home aosp
+    chown aosp:aosp /home/aosp/.gitconfig /home/aosp/.ssh/config
+ENV HOME /home/aosp
+USER aosp
+WORKDIR /aosp
+
 # Improve rebuild performance by enabling compiler cache
 ENV USE_CCACHE 1
 ENV CCACHE_DIR /ccache
-
-ENV HOME /aosp
-WORKDIR $HOME
-
 
