@@ -24,22 +24,6 @@ RUN chmod 755 /usr/local/bin/repo
 # The persistent data will be in these two directories, everything else is
 # considered to be ephemeral
 VOLUME ["/ccache", "/aosp"]
-#
-# user account
-#
-ENV MYNAME android
-ENV MYPASS android
-ENV HOME /home/$MYNAME
-
-RUN useradd --create-home -d $HOME --shell /bin/bash --user-group \
-    --groups adm,sudo $MYNAME \
-    && echo "$MYNAME:$MYPASS" | chpasswd
-
-ADD gitconfig /home/$MYNAME/.gitconfig
-ADD ssh_config /home/$MYNAME/.ssh/config
-RUN chown $MYNAME:$MYNAME -R /home/$MYNAME
-
-USER $MYNAME
 WORKDIR /aosp
 
 # Improve rebuild performance by enabling compiler cache
