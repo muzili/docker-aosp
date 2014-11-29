@@ -13,7 +13,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-security main universe res
 #
 ENV DEBIAN_FRONTEND noninteractive
 RUN dpkg --add-architecture i386 && apt-get update -qq
-RUN apt-get install -y apt-transport-https ca-certificates wget \
+RUN apt-get install -y apt-transport-https ca-certificates wget unzip \
     curl vim git man-db make bison g++-multilib gperf libxml2-utils \
     software-properties-common libstdc++6:i386 lib32z1 lib32bz2-1.0 \
     lib32ncurses5 openjdk-7-jdk build-essential expect
