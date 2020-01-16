@@ -18,6 +18,8 @@ RUN apt-get install -y apt-transport-https ca-certificates wget unzip \
     software-properties-common libstdc++6:i386 lib32z1 lib32bz2-1.0 \
     lib32ncurses5 openjdk-7-jdk build-essential expect zip u-boot-tools bc \
     device-tree-compiler
+
+RUN apt-get install -y python
  
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod 755 /usr/local/bin/repo
