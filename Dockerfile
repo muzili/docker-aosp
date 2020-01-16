@@ -16,8 +16,8 @@ RUN dpkg --add-architecture i386 && apt-get update -qq
 RUN apt-get install -y apt-transport-https ca-certificates wget unzip \
     curl vim git man-db make bison g++-multilib gperf libxml2-utils \
     software-properties-common libstdc++6:i386 lib32z1 lib32bz2-1.0 \
-    lib32ncurses5 openjdk-7-jdk build-essential expect zip u-boot-tools
-
+    lib32ncurses5 openjdk-7-jdk build-essential expect zip u-boot-tools bc
+ 
 RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo
 RUN chmod 755 /usr/local/bin/repo
 
